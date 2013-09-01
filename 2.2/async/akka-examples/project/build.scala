@@ -9,7 +9,7 @@ object AkkaExamplesBuild extends Build {
   val Organization = "com.example"
   val Name = "Akka Examples"
   val Version = "0.1.0-SNAPSHOT"
-  val ScalaVersion = "2.9.2"
+  val ScalaVersion = "2.10.0"
   val ScalatraVersion = "2.2.1"
 
   lazy val project = Project (

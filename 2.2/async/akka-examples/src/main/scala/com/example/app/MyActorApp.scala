@@ -3,7 +3,7 @@ package com.example.app
 import akka.actor.{ActorRef, Actor, Props, ActorSystem}
 import akka.util.Timeout
 import org.scalatra.{FutureSupport, Accepted, ScalatraServlet}
-import akka.dispatch.ExecutionContext
+import scala.concurrent.ExecutionContext
 
 class MyActorApp(system:ActorSystem, myActor:ActorRef) extends ScalatraServlet with FutureSupport {
 

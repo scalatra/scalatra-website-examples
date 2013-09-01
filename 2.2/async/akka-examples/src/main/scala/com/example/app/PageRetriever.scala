@@ -1,18 +1,20 @@
 package com.example.app
 
-import _root_.akka.actor.ActorSystem
-import _root_.akka.dispatch.{Future, ExecutionContext}
-import _root_.akka.dispatch.{Promise => AkkaPromise}
-
+import akka.actor.ActorSystem
+import scala.concurrent.{Future, Promise, ExecutionContext}
 import dispatch._
 import org.scalatra._
+import scala.util.{Left, Try}
 
 object DispatchAkka {
 
   def retrievePage()(implicit ctx: ExecutionContext): Future[String] = {
-    val prom = AkkaPromise[String]()
+    val prom = Promise[String]()
     dispatch.Http(url("http://slashdot.org/") OK as.String) onComplete {
-      case r => prom.complete(r)
+      case r => r match {
+        case Left(exception) => println(exception)
+        case Right(content) => prom.complete(Try{content})
+      }
     }
     prom.future
   }
