@@ -9,8 +9,8 @@ object FlowershopBuild extends Build {
   val Organization = "com.example"
   val Name = "Flowershop"
   val Version = "0.1.0-SNAPSHOT"
-  val ScalaVersion = "2.11.7"
-  val ScalatraVersion = "2.4.+"
+  val ScalaVersion = "2.11.8"
+  val ScalatraVersion = "2.4.1"
 
   lazy val project = Project (
     "flowershop",
@@ -31,7 +31,7 @@ object FlowershopBuild extends Build {
         "ch.qos.logback" % "logback-classic" % "1.1.3" % "runtime",
         "org.eclipse.jetty" % "jetty-webapp" % "9.1.5.v20140505" % "container",
         "org.eclipse.jetty" % "jetty-plus" % "9.1.5.v20140505" % "container",
-        "javax.servlet" % "javax.servlet-api" % "3.1.0" % "container;provided;test" 
+        "javax.servlet" % "javax.servlet-api" % "3.1.0" % "container;provided;test"
       ),
       scalateTemplateConfig in Compile <<= (sourceDirectory in Compile){ base =>
         Seq(
