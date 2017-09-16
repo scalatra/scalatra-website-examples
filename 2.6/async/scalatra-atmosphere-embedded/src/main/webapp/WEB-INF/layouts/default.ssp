@@ -1,0 +1,38 @@
+<%@ val body:String %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scalatra Atmosphere Example</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style type="text/css">
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>    
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Scalatra atmosphere</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <%= unescape(body) %>
+
+    </div> <!-- /container -->
+    <script src="js/jquery-1.9.0.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.atmosphere.js"></script>
+    <script src="js/application.js"></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+    <div class="row">
+        <h1>Atmosphere Chat</h1>
+        <p class="lead">Default transport is WebSocket, fallback is long-polling.</p>
+        <div id="detect" class="alert alert-warning">
+            <p><span class="label label-info">Info</span> Detecting what the browser and server are supported...</p>
+        </div>
+
+        <ul id="messages" class="list-group">
+        </ul>
+
+        <div id="status" class="alert alert-warning">
+            <p><span class="label label-info">Info</span> Connecting...</p>
+        </div>
+
+        <div class="input-group" id="input">
+            <input id="intxt" type="text" class="form-control" placeholder="Enter your name...">
+            <span class="input-group-addon">&#x2709;</span>
+        </div>
+    </div>
