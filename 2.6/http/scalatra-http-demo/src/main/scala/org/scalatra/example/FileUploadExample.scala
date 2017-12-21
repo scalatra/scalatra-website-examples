@@ -2,13 +2,13 @@ package org.scalatra.example
 
 
 import org.scalatra._
-import servlet.{MultipartConfig, SizeConstraintExceededException, FileUploadSupport}
-import xml.Node
+import servlet.{FileUploadSupport, MultipartConfig, SizeConstraintExceededException}
+import xml.{Elem, Node}
 
 class FileUploadExample extends ScalatraServlet with FileUploadSupport with FlashMapSupport {
   configureMultipartHandling(MultipartConfig(maxFileSize = Some(3*1024*1024)))
 
-  def displayPage(content: Seq[Node]) = Template.page("File upload example", content, url(_))
+  def displayPage(content: Seq[Node]): Elem = Template.page("File upload example", content, url(_))
 
   error {
     case e: SizeConstraintExceededException =>
@@ -37,7 +37,7 @@ class FileUploadExample extends ScalatraServlet with FileUploadSupport with Flas
     fileParams.get("file") match {
       case Some(file) =>
         Ok(file.get(), Map(
-          "Content-Type"        -> (file.contentType.getOrElse("application/octet-stream")),
+          "Content-Type"        -> file.contentType.getOrElse("application/octet-stream"),
           "Content-Disposition" -> ("attachment; filename=\"" + file.name + "\"")
         ))
 
