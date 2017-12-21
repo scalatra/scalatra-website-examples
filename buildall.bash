@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # run 'sbt test' on every project
 
 set -e

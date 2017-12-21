@@ -1,14 +1,13 @@
 package org.scalatra.example
 
 import org.scalatra._
-import scala.xml.{Text, Node}
+import scala.xml.{Elem, Node, Text}
 import scalate.ScalateSupport
-
 import scala.language.postfixOps
 
 class HttpExample extends ScalatraServlet with FlashMapSupport with ScalateSupport {
 
-  private def displayPage(title:String, content:Seq[Node]) = Template.page(title, content, url(_))
+  private def displayPage(title:String, content:Seq[Node]): Elem = Template.page(title, content, url(_))
 
   get("/date/:year/:month/:day") {
     displayPage("Scalatra: Date Example",
@@ -57,18 +56,17 @@ class HttpExample extends ScalatraServlet with FlashMapSupport with ScalateSuppo
 
   post("/login") {
     (params("first"), params("last")) match {
-      case (first:String, last:String) => {
+      case (first:String, last:String) =>
         session("first") = first
         session("last") = last
         displayPage("Scalatra: Session Example",
         <pre>You have just logged in as: {first + " " + last}</pre>
         <pre>Route: /login</pre>)
-      }
     }
   }
 
   get("/logout") {
-    session.invalidate
+    session.invalidate()
     displayPage("Scalatra: Session Example",
     <pre>You have logged out</pre>
     <pre>Route: /logout</pre>)
@@ -83,7 +81,7 @@ class HttpExample extends ScalatraServlet with FlashMapSupport with ScalateSuppo
 
   get("/scalate") {
     val content = "this is some fake content for the web page"
-    layoutTemplate("index.scaml", "content"-> content)
+    layoutTemplate("index.scaml", "content" -> content)
   }
 
   get("/flash-map/form") {
@@ -116,7 +114,14 @@ class HttpExample extends ScalatraServlet with FlashMapSupport with ScalateSuppo
 
 object Template {
 
-  def page(title:String, content:Seq[Node], url: String => String = identity _, head: Seq[Node] = Nil, scripts: Seq[String] = Seq.empty, defaultScripts: Seq[String] = Seq("/assets/js/jquery.min.js", "/assets/js/bootstrap.min.js")) = {
+  def page(
+            title:String,
+            content:Seq[Node],
+            url: String => String = identity,
+            head: Seq[Node] = Nil,
+            scripts: Seq[String] = Seq.empty,
+            defaultScripts: Seq[String] = Seq("/assets/js/jquery.min.js", "/assets/js/bootstrap.min.js")
+          ): Elem = {
     <html lang="en">
       <head>
         <title>{ title }</title>
@@ -149,7 +154,7 @@ object Template {
               </a>
               <a class="brand" href="/">Scalatra Examples</a>
               <div class="nav-collapse collapse">
-               
+
               </div><!--/.nav-collapse -->
             </div>
           </div>
@@ -180,9 +185,9 @@ object Template {
             </div> <!-- /content -->
           </div> <!-- /container -->
     <footer class="vcard" role="contentinfo">
-      
-    </footer>        
-           
+
+    </footer>
+
           <!-- Le javascript
           ================================================== -->
           <!-- Placed at the end of the document so the pages load faster -->

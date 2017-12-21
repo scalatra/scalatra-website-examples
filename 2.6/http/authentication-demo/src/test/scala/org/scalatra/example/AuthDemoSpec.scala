@@ -1,8 +1,8 @@
 package org.scalatra.example
 
 import org.scalatra.test.specs2._
-
-import java.util.Base64;
+import java.util.Base64
+import org.specs2.matcher.MatchResult
 
 class AuthDemoSpec extends ScalatraSpec { def is = s2"""
   GET / on AuthDemo with
@@ -13,11 +13,11 @@ class AuthDemoSpec extends ScalatraSpec { def is = s2"""
 
   addServlet(classOf[AuthDemo], "/*")
 
-  def noUser = get("/") {
+  def noUser: MatchResult[Any] = get("/") {
     status must_== 401
   }
 
-  def validUser = {
+  def validUser: MatchResult[Any] = {
     val validAuth = "Basic " + Base64.getEncoder.encodeToString("foo:bar")
 
     get(
@@ -29,8 +29,7 @@ class AuthDemoSpec extends ScalatraSpec { def is = s2"""
     }
   }
 
-
-  def invalidUser = {
+  def invalidUser: MatchResult[Any] = {
     val invalidAuth = "Basic " + Base64.getEncoder.encodeToString("baz:qux")
 
     get(
