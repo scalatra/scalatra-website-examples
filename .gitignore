@@ -10,3 +10,5 @@
 *.stackdump
 project/target/
 target/
+.metals
+.bloop
