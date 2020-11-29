@@ -1,0 +1,37 @@
+name: Scala CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        test_dir:
+          - 2.7/async/akka-examples
+          - 2.7/async/scalatra-atmosphere-embedded
+          - 2.7/async/scalatra-atmosphere-example
+          - 2.7/deployment/scalatra-heroku
+          - 2.7/formats/scalatra-forms
+          - 2.7/http/authentication-demo
+          - 2.7/http/scalatra-gzip
+          - 2.7/http/scalatra-http-demo
+          - 2.7/http/scentry-auth-demo
+          - 2.7/persistence/scalatra-slick
+          - 2.7/persistence/scalatra-squeryl
+          - 2.7/views/scalatra-twirl
+          - 2.7/swagger-example
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+    - name: Run tests
+      env:
+        TEST_DIR: ${{ matrix.test_dir }} 
+      run: cd $TEST_DIR && sbt test
