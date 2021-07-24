@@ -12,19 +12,17 @@ jobs:
     strategy:
       matrix:
         test_dir:
-          - 2.7/async/akka-examples
-          - 2.7/async/scalatra-atmosphere-embedded
-          - 2.7/async/scalatra-atmosphere-example
-          - 2.7/deployment/scalatra-heroku
-          - 2.7/formats/scalatra-forms
-          - 2.7/http/authentication-demo
-          - 2.7/http/scalatra-gzip
-          - 2.7/http/scalatra-http-demo
-          - 2.7/http/scentry-auth-demo
-          - 2.7/persistence/scalatra-slick
-          - 2.7/persistence/scalatra-squeryl
-          - 2.7/views/scalatra-twirl
-          - 2.7/swagger-example
+          - 2.8/async/akka-examples
+          - 2.8/deployment/scalatra-heroku
+          - 2.8/formats/scalatra-forms
+          - 2.8/http/authentication-demo
+          - 2.8/http/scalatra-gzip
+          - 2.8/http/scalatra-http-demo
+          - 2.8/http/scentry-auth-demo
+          - 2.8/persistence/scalatra-slick
+          - 2.8/persistence/scalatra-squeryl
+          - 2.8/views/scalatra-twirl
+          - 2.8/swagger-example
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 1.8
