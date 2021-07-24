@@ -17,4 +17,6 @@ libraryDependencies ++= Seq(
   "javax.servlet"           %  "javax.servlet-api" % "3.1.0"             % "provided"
 )
 
+ThisBuild / evictionErrorLevel := Level.Warn
+
 enablePlugins(JettyPlugin)
