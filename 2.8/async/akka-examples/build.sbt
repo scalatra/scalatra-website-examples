@@ -11,12 +11,9 @@ libraryDependencies ++= Seq(
   "org.scalaj"              %% "scalaj-http"       % "2.4.2",
   "ch.qos.logback"          %  "logback-classic"   % "1.2.4"            % Provided,
   "org.scalatra"            %% "scalatra"          % ScalatraVersion,
-  "org.scalatra"            %% "scalatra-scalate"  % ScalatraVersion,
   "org.scalatra"            %% "scalatra-specs2"   % ScalatraVersion    % "test",
   "org.eclipse.jetty"       %  "jetty-webapp"      % "9.4.43.v20210629" % "provided",
   "javax.servlet"           %  "javax.servlet-api" % "3.1.0"            % "provided"
 )
-
-ThisBuild / evictionErrorLevel := Level.Warn
 
 enablePlugins(JettyPlugin)
