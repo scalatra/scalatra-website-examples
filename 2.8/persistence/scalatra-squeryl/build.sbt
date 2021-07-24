@@ -7,7 +7,6 @@ val ScalatraVersion = "2.8.0"
 
 libraryDependencies ++= Seq(
   "org.scalatra"            %% "scalatra"           % ScalatraVersion,
-  "org.scalatra"            %% "scalatra-scalate"   % ScalatraVersion,
   "org.scalatra"            %% "scalatra-scalatest" % ScalatraVersion    % Test,
   "org.squeryl"             %% "squeryl"            % "0.9.15",
   "com.h2database"          %  "h2"                 % "1.4.200",
@@ -19,4 +18,5 @@ libraryDependencies ++= Seq(
 
 ThisBuild / evictionErrorLevel := Level.Warn
 
+enablePlugins(SbtTwirl)
 enablePlugins(JettyPlugin)

@@ -1,0 +1,12 @@
+@(articles: List[org.scalatra.example.models.Article])(implicit flash: org.scalatra.FlashMap)
+@layout {
+  <div class="row">
+    <div class="span8">
+      @articles.map { article =>
+        <h2>@{article.title}</h2>
+        <!-- hey, it's an ORM demo, don't mock the html! -->
+        <p>@Html(article.body.replace("\n", "<br />"))</p>
+      }
+    </div>
+  </div>
+}

@@ -1,7 +1,6 @@
 package org.scalatra.example
 
 import org.scalatra._
-import scalate.ScalateSupport
 import org.squeryl._
 import org.squeryl.dsl._
 import org.scalatra.example.data.DatabaseInit
@@ -14,23 +13,25 @@ import java.util.Collections
 class ArticlesController extends ScalatraServlet 
   with SessionSupport
 	with DatabaseSessionSupport 
-	with ScalateSupport
 	with MethodOverride
 	with FlashMapSupport
   with PrimitiveTypeMode {
+
+  // To supply FlashMap to Twirl templates
+  private implicit def flashMap: FlashMap = flash
 
   get("/") {
     contentType = "text/html"
       
     val articles = from(BlogDb.articles)(select(_))
-    ssp("/articles/index", "articles" -> articles.toList)
+    html.index(articles.toList)
   }
   
   val newArticle = get("/articles/new") { 
     contentType = "text/html"
       
     val article = new Article()
-    ssp("/articles/new", "article" -> article)
+    html.form(article)
   }
   
   post("/articles") {
@@ -43,7 +44,7 @@ class ArticlesController extends ScalatraServlet
       redirect("/")
     } else {
       flash("error") = "There were problems creating your article"
-      ssp("articles/new", "article" -> article)
+      html.form(article)
     }
   }
 
@@ -53,13 +54,4 @@ class ArticlesController extends ScalatraServlet
     BlogDb.create
     redirect("/articles/new")
   }
-
-  notFound {
-    // Try to render a ScalateTemplate if no route matched
-    findTemplate(requestPath) map { path =>
-      contentType = "text/html"
-      layoutTemplate(path)
-    } orElse serveStaticResource() getOrElse resourceNotFound()
-  }
-  
 }

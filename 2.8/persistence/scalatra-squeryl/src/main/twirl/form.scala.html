@@ -1,0 +1,15 @@
+@(article: org.scalatra.example.models.Article)(implicit flash: org.scalatra.FlashMap)
+@layout {
+  <div class="row">
+    <div class="span8">
+      <h2>Add an article</h2>
+      <form class="well" action="/articles" method="post">
+        <label>Title</label>
+        <input type="text" name="title" class="input-xlarge" value="@article.title"></input>
+        <label>Body</label>
+        <textarea name="body" class="input-xlarge">@article.body</textarea><br/>
+        <button type="submit" class="btn-primary">Create</button>
+      </form>
+    </div>
+  </div>
+}
