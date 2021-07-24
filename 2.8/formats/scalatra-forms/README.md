@@ -4,12 +4,12 @@ This is an example application demonstrating the use of the validation forms
 in the [Scalatra](http://scalatra.org) web framework.
 
 A full tutorial on the use of validation forms is available on the
-[Scalatra website](http://scalatra.org/guides/2.7/formats/forms.html).
+[Scalatra website](http://scalatra.org/guides/2.8/formats/forms.html).
 
 ## Build & Run ##
 
 ```sh
-$ cd 2.7/formats/scalatra-forms
+$ cd 2.8/formats/scalatra-forms
 $ chmod u+x sbt
 $ ./sbt ~jetty:start
 ```

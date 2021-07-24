@@ -1,12 +1,12 @@
 # Scalatra Twirl example#
 
-Corresponds to the guide at [http://scalatra.org/guides/2.7/views/twirl.html](http://scalatra.org/guides/2.7/views/twirl.html)
+Corresponds to the guide at [http://scalatra.org/guides/2.8/views/twirl.html](http://scalatra.org/guides/2.8/views/twirl.html)
 
 ## Build & Run ##
 
 ```sh
 $ git clone https://github.com/scalatra/scalatra-website-examples.git
-$ cd scalatra-website-examples/2.7/views/scalatra-twirl
+$ cd scalatra-website-examples/2.8/views/scalatra-twirl
 $ chmod +x sbt
 $ ./sbt ~jetty:start
 ```

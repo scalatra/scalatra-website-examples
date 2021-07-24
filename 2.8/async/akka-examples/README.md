@@ -1,12 +1,12 @@
 # akka-examples #
 
-Corresponds to the guide at [http://scalatra.org/guides/2.7/async/akka.html](http://scalatra.org/guides/2.7/async/akka.html)
+Corresponds to the guide at [http://scalatra.org/guides/2.8/async/akka.html](http://scalatra.org/guides/2.8/async/akka.html)
 
 ## Build & Run ##
 
 ```sh
 $ git clone https://github.com/scalatra/scalatra-website-examples.git
-$ cd scalatra-website-examples/2.7/async/akka-examples
+$ cd scalatra-website-examples/2.8/async/akka-examples
 $ chmod +x sbt
 $ ./sbt ~jetty:start
 ```

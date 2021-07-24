@@ -1,12 +1,12 @@
 # Slick Example #
 
-Corresponds to the guide at [http://scalatra.org/guides/2.7/persistence/slick.html](http://scalatra.org/guides/2.7/persistence/slick.html)
+Corresponds to the guide at [http://scalatra.org/guides/2.8/persistence/slick.html](http://scalatra.org/guides/2.8/persistence/slick.html)
 
 ## Build & Run ##
 
 ```sh
 $ git clone https://github.com/scalatra/scalatra-website-examples.git
-$ cd scalatra-website-examples/2.7/persistence/scalatra-slick
+$ cd scalatra-website-examples/2.8/persistence/scalatra-slick
 $ chmod +x sbt
 $ ./sbt ~jetty:start
 ```

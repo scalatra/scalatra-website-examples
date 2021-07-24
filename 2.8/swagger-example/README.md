@@ -1,7 +1,7 @@
 Scalatra Swagger Flowershop
 ===========================
 
-Corresponds to the guide at [http://scalatra.org/guides/2.7/swagger.html](http://scalatra.org/guides/2.7/swagger.html)
+Corresponds to the guide at [http://scalatra.org/guides/2.8/swagger.html](http://scalatra.org/guides/2.8/swagger.html)
 
 A sample API, including automatically generated, runnable API documentation,
 to demonstrate Scalatra's Swagger functionality.
@@ -10,7 +10,7 @@ to demonstrate Scalatra's Swagger functionality.
 
 ```sh
 $ git clone https://github.com/scalatra/scalatra-website-examples.git
-$ cd scalatra-website-examples/2.7/swagger-example
+$ cd scalatra-website-examples/2.8/swagger-example
 $ chmod +x sbt
 $ ./sbt ~jetty:start
 ```

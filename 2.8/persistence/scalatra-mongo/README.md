@@ -6,7 +6,7 @@ Corresponds to a specific Scalatra version Mongo guide at [http://scalatra.org/g
 
 ```sh
 $ git clone https://github.com/scalatra/scalatra-website-examples.git
-$ cd scalatra-website-examples/2.7/persistence/scalatra-mongo
+$ cd scalatra-website-examples/2.8/persistence/scalatra-mongo
 $ chmod +x sbt; sbt
 > ~;jetty:stop;jetty:start
 > browse

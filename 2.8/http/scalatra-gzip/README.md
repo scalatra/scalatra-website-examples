@@ -1,12 +1,12 @@
 # scalatra-gzip #
 
-Corresponds to the guide at [http://scalatra.org/guides/2.7/http/gzip.html](http://scalatra.org/guides/2.7/http/gzip.html).
+Corresponds to the guide at [http://scalatra.org/guides/2.8/http/gzip.html](http://scalatra.org/guides/2.8/http/gzip.html).
 
 ## Build & Run ##
 
 ```sh
 $ git clone https://github.com/scalatra/scalatra-website-examples.git
-$ cd scalatra-website-examples/2.7/http/scalatra-gzip
+$ cd scalatra-website-examples/2.8/http/scalatra-gzip
 $ chmod +x sbt
 $ ./sbt ~jetty:start
 ```
