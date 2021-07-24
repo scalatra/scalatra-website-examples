@@ -2,10 +2,9 @@ package org.scalatra.example
 
 import org.scalatra._
 import scala.xml.{Elem, Node, Text}
-import scalate.ScalateSupport
 import scala.language.postfixOps
 
-class HttpExample extends ScalatraServlet with FlashMapSupport with ScalateSupport {
+class HttpExample extends ScalatraServlet with FlashMapSupport {
 
   private def displayPage(title:String, content:Seq[Node]): Elem = Template.page(title, content, url(_))
 
@@ -77,11 +76,6 @@ class HttpExample extends ScalatraServlet with FlashMapSupport with ScalateSuppo
     <h2>Hello world!</h2>
     <p>Referer: { (request referrer) map { Text(_) } getOrElse { <i>none</i> }}</p>
     <pre>Route: /</pre>)
-  }
-
-  get("/scalate") {
-    val content = "this is some fake content for the web page"
-    layoutTemplate("index.scaml", "content" -> content)
   }
 
   get("/flash-map/form") {
