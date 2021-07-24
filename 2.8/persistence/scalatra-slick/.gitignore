@@ -1,0 +1,5 @@
+.DS_Store
+target/
+/.lib/
+.idea
+.idea_modules
