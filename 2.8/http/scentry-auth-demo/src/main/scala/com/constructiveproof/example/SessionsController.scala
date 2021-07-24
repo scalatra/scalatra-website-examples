@@ -1,8 +1,9 @@
 package com.constructiveproof.example
 
+import org.scalatra._
 import com.constructiveproof.example.auth.AuthenticationSupport
 
-class SessionsController extends ScentryauthdemoStack with AuthenticationSupport {
+class SessionsController extends ScalatraServlet with AuthenticationSupport {
 
   before("/new") {
     logger.info("SessionsController: checking whether to run RememberMeStrategy: " + !isAuthenticated)
@@ -16,7 +17,19 @@ class SessionsController extends ScentryauthdemoStack with AuthenticationSupport
     if (isAuthenticated) redirect("/")
 
     contentType="text/html"
-    ssp("/sessions/new")
+    <html>
+      <p>Please login:</p>
+      <form action="/sessions" method="post">
+        <p>
+          <input type="text" name="login" /><br/>
+          <input type="password" name="password" /><br/>
+          <label>Remember Me:</label><input type="checkbox" name="rememberMe" value="true" />
+        </p>
+        <p>
+          <input type="submit" />
+        </p>
+      </form>
+    </html>
   }
 
   post("/") {
@@ -24,7 +37,7 @@ class SessionsController extends ScentryauthdemoStack with AuthenticationSupport
 
     if (isAuthenticated) {
       redirect("/")
-    }else{
+    } else {
       redirect("/sessions/new")
     }
   }
