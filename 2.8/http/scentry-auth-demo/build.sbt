@@ -3,7 +3,7 @@ name := "ScentryAuthDemo"
 version := "0.1.0-SNAPSHOT"
 scalaVersion := "2.13.6"
 
-val ScalatraVersion = "2.8.1"
+val ScalatraVersion = "2.8.2"
 
 libraryDependencies ++= Seq(
   "org.scalatra"            %% "scalatra-auth"     % ScalatraVersion,

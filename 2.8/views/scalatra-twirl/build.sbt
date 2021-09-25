@@ -3,7 +3,7 @@ name := "Scalatra Twirl"
 version := "0.1.0-SNAPSHOT"
 scalaVersion := "2.13.6"
 
-val ScalatraVersion = "2.8.1"
+val ScalatraVersion = "2.8.2"
 
 libraryDependencies ++= Seq(
   "org.scalatra"            %% "scalatra"          % ScalatraVersion,
@@ -12,8 +12,6 @@ libraryDependencies ++= Seq(
   "org.eclipse.jetty"       %  "jetty-webapp"      % "9.4.35.v20201120" % Provided,
   "javax.servlet"           %  "javax.servlet-api" % "3.1.0"            % Provided
 )
-
-ThisBuild / evictionErrorLevel := Level.Warn
 
 enablePlugins(SbtTwirl)
 enablePlugins(JettyPlugin)
