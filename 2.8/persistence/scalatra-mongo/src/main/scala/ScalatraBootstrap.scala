@@ -4,7 +4,7 @@ import org.mongodb.scala.MongoClient
 import org.scalatra.example.MongoController
 
 class ScalatraBootstrap extends LifeCycle {
-  override def init(context: ServletContext) {
+  override def init(context: ServletContext) = {
 
     // As you can see, there's not much to do in order to get MongoDb working with Scalatra.
     // We're connecting with default settings - localhost on port 27017 -

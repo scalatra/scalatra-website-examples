@@ -18,18 +18,18 @@ class ScalatraBootstrap extends LifeCycle {
   val cpds = new ComboPooledDataSource
   logger.info("Created c3p0 connection pool")
 
-  override def init(context: ServletContext) {
+  override def init(context: ServletContext) = {
     val db = Database.forDataSource(cpds, None)
     context.mount(new SlickApp(db), "/*")
   }
 
-  private def closeDbConnection() {
+  private def closeDbConnection() = {
     logger.info("Closing c3po connection pool")
     cpds.close
   }
 
-  override def destroy(context: ServletContext) {
+  override def destroy(context: ServletContext) = {
     super.destroy(context)
-    closeDbConnection
+    closeDbConnection()
   }
 }

@@ -20,7 +20,7 @@ class MongoController(collection: MongoCollection[Document]) extends ScalatraMon
    * Retrieve everything in the MongoDb collection we're currently using.
    */
   get("/") {
-    collection.find().results().map(doc => doc.toJson)
+    collection.find().results().map(doc => doc.toJson())
   }
 
   /**

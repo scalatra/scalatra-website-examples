@@ -10,9 +10,9 @@ import org.scalatra.example.models.BlogDb
 import java.util.Random
 import java.util.Collections
 
-class ArticlesController extends ScalatraServlet 
+class ArticlesController extends ScalatraServlet
   with SessionSupport
-	with DatabaseSessionSupport 
+	with DatabaseSessionSupport
 	with MethodOverride
 	with FlashMapSupport
   with PrimitiveTypeMode {
@@ -22,21 +22,21 @@ class ArticlesController extends ScalatraServlet
 
   get("/") {
     contentType = "text/html"
-      
+
     val articles = from(BlogDb.articles)(select(_))
     html.index(articles.toList)
   }
-  
-  val newArticle = get("/articles/new") { 
+
+  val newArticle = get("/articles/new") {
     contentType = "text/html"
-      
+
     val article = new Article()
     html.form(article)
   }
-  
+
   post("/articles") {
     contentType = "text/html"
-    
+
     val article = new Article(0, params("title"), params("body"))
 
     if(Article.create(article)) {

@@ -5,7 +5,7 @@ import org.scalatra._
 class AuthDemo extends ScalatraServlet with AuthenticationSupport {
 
   get("/*") {
-    val user: User = basicAuth.get
+    val user: User = basicAuth().get
 
     <html>
       <body>
