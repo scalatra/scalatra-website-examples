@@ -1,0 +1,14 @@
+<% import org.scalatra.example.models.Article %>
+<%@ val articles:List[Article] %>
+
+<div class="row">
+  <div class="span8">
+
+    #for(article <- articles)
+        <h2><%= article.title %></h2>
+        <!-- hey, it's an ORM demo, don't mock the html! -->
+        <p><%= unescape(article.body.replace("\n", "<br />")) %></p> 
+    #end
+
+  </div>
+</div>

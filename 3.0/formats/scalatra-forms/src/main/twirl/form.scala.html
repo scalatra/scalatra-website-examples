@@ -1,0 +1,49 @@
+@()(implicit request: jakarta.servlet.http.HttpServletRequest)
+@import org.scalatra.forms.views._
+<html>
+  <head>
+    <title>Scalatra's Forms support example</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Scalatra's Forms support example</h1>
+      <form action="/" method="POST" class="form-horizontal">
+        <div class="form-group @if(error("text").nonEmpty){has-error}">
+          <label class="col-sm-2 control-label" for="text">Text (*):</label>
+          <div class="col-sm-10">
+            @Html(text("text", "class" -> "form-control"))
+            <span class="error">@error("text")</span>
+          </div>
+        </div>
+        <div class="form-group @if(error("email").nonEmpty){has-error}">
+          <label class="col-sm-2 control-label" for="email">Email:</label>
+          <div class="col-sm-10">
+            @Html(text("email", "class" -> "form-control"))
+            <span class="error">@error("email")</span>
+          </div>
+        </div>
+        <div class="form-group @if(errors("number").nonEmpty){has-error}">
+          <label class="col-sm-2 control-label" for="number">Number:</label>
+          <div class="col-sm-10">
+            @Html(text("number", "class" -> "form-control"))
+            <span class="error">@error("number")</span>
+          </div>
+        </div>
+        <div class="form-group @if(errors("checkbox").nonEmpty){has-error}">
+          <label class="col-sm-2 control-label">Checkbox:</label>
+          <div class="col-sm-10">
+            <div class="checkbox">
+              <label>@Html(checkbox("checkbox", "checkboxA")) Checkbox A</label>
+            </div>
+            <div class="checkbox">
+              <label>@Html(checkbox("checkbox", "checkboxB")) Checkbox B</label>
+            </div>
+            <span class="error">@error("checkbox")</span>
+          </div>
+        </div>
+        <input type="submit" value="Submit" class="btn btn-primary">
+      </form>
+    </div>
+  </body>
+</html>

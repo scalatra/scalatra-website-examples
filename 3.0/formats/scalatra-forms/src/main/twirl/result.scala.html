@@ -1,0 +1,35 @@
+@(form: org.scalatra.example.forms.ValidationForm)
+<html>
+  <head>
+    <title>Scalatra's Forms support example</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Scalatra's Forms support example</h1>
+      <table class="table">
+        <tr>
+          <th>Text</th>
+          <td>@form.text</td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td>@form.email</td>
+        </tr>
+        <tr>
+          <th>Number</th>
+          <td>@form.number</td>
+        </tr>
+        <tr>
+          <th>Checkbox</th>
+          <td>
+            @form.checkbox.map { value =>
+              @value<br>
+            }
+          </td>
+        </tr>
+      </table>
+      <a href="/" class="btn btn-primary">Back</a>
+    </div>
+  </body>
+</html>

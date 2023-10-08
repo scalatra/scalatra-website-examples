@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<application
+    xsi:schemaLocation="http://www.zeroturnaround.com/alderaan/rebel-2_0.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.zeroturnaround.com"
+    >
+  <classpath>
+    <dir name="${scalatra_project_root}/target/scala-2.9.2/classes" />
+    <dir name="${scalatra_project_root}/target/scala-2.9.2/test-classes"></dir>
+  </classpath>
+  <web>
+    <link>
+      <dir name="${scalatra_project_root}/src/main/webapp" />
+    </link>
+  </web>
+</application>
