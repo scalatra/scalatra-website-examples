@@ -1,7 +1,7 @@
 package com.example.app
 
 import org.apache.pekko.actor.ActorSystem
-import scalaj.http.{Http => SJHttp}
+import sttp.client3._
 
 import org.scalatra._
 
@@ -23,7 +23,9 @@ class FutureController(system: ActorSystem) extends ScalatraServlet with FutureS
 object HttpClient {
   def retrievePage()(implicit ctx: ExecutionContext): Future[String] = {
     Future {
-      val response = SJHttp("https://scalatra.org/").asString
+      val backend = HttpClientSyncBackend()
+      val request = basicRequest.get(uri"https://scalatra.org/").response(asStringAlways)
+      val response = request.send(backend)
       response.body
     }
   }
