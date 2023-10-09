@@ -11,6 +11,6 @@ class ScalatraBootstrap extends LifeCycle {
     // This is tentative. We will rewrite it once the official version of Scalatra 2.7 is released.
     context.setInitParameter("org.scalatra.cors.allowedOrigins", "http://petstore.swagger.io")
     context.mount(new FlowersController, "/flowers", "flowers")
-    context.mount (new ResourcesApp, "/api-docs")
+    context.mount(new ResourcesApp, "/api-docs")
   }
 }
