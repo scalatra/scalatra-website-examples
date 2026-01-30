@@ -6,7 +6,6 @@ scalaVersion := "3.3.7"
 val ScalatraVersion = "3.0.0"
 
 libraryDependencies ++= Seq(
-  "org.json4s"              %% "json4s-jackson"          % "4.0.6",
   "org.scalatra"            %% "scalatra-forms-jakarta"  % ScalatraVersion,
   "org.scalatra"            %% "scalatra-jakarta"        % ScalatraVersion,
   "org.scalatra"            %% "scalatra-specs2-jakarta" % ScalatraVersion    % Test,
