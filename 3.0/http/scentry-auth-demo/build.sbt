@@ -1,7 +1,7 @@
 organization := "com.constructiveproof.example"
 name := "ScentryAuthDemo"
 version := "0.1.0-SNAPSHOT"
-scalaVersion := "3.3.1"
+scalaVersion := "3.3.7"
 
 val ScalatraVersion = "3.0.0"
 
